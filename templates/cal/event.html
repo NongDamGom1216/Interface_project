@@ -28,7 +28,7 @@ form{
 <div class="alert alert-danger">{{ field.label }} <strong>{{ error|escape }}</strong></div>
 {% endfor %} {% endif %}
 
-<form method="post" class="auto">
+<form method="post">
   {% csrf_token %}
   <table class="form form-table">
     {{ form }}
