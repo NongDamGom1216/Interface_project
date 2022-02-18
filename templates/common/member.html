@@ -1,9 +1,26 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %} {% block content %}
+<style>
+  .c-titel {
+    text-align: center;
+    margin-top: 2%;
+    font-weight: 900;
+  }
+
+  hr {
+    display: none;
+  }
+
+  table {
+    margin-bottom: 10%;
+  }
+</style>
+<h1 class="text-dark c-titel">MEMBER</h1>
+{% load static %}
 <div class="container my-3">
   <div class="user-container my-3">
     <table class="table table-striped table-hover">
       <thead>
-        <tr class="thead-dark">
+        <tr class="thead-info">
           <th style="width: 60px">USER</th>
           <th style="width: 120px">EMAIL</th>
           <th style="width: 120px">ADDRESS</th>

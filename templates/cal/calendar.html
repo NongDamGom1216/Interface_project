@@ -1,8 +1,23 @@
-{% extends 'cal/cal_base.html' %} {% block title %} Calendar {% endblock %} {% block content_side %}
+{% extends 'cal/cal_base.html' %} {% block title %} 
+<style>
+  .c-titel{
+    text-align: center;
+    margin-top: 2%;
+    font-weight: 900;
+  }
+  hr{
+    display:none;
+  }
+  table{
+    margin-bottom: 10%;
+  }
+</style>
+<h1 class="text-dark c-titel">CALENDAR</h1>
+{% endblock %} {% block content_side %}
 <div class="clearfix">
-  <a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
-  <a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
-  <a class="btn btn-info right" href="{% url 'cal:event_new' %}"> New Event </a>
+  <a class="btn btn-dark rigth btn-prev" href="{% url 'cal:calendar' %}?{{ prev_month }}"> < </a>
+  <a class="btn btn-dark rigth btn-next" href="{% url 'cal:calendar' %}?{{ next_month }}"> > </a>
+  <a class="btn btn-dark right" href="{% url 'cal:event_new' %}"> New Event </a>
 </div>
 
 {{ calendar }} {% endblock %}

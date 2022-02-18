@@ -18,22 +18,25 @@
     <link href="{{baseUrl}}/css/styles.css" rel="stylesheet" />
 
     <title>Scheduler</title>
+    <style>
+      .footer{
+        bottom: 0;
+        position: absolute;
+        width: 85.6%;
+
+      }
+    </style>
   </head>
   <!-- static 경로에 대한 하드 코드 회피 static '스타일 파일 경로' -->
 
-  <body class="sb-nav-fixed">
+  <body class="sb-nav-fixed ">
     {% include "navbar.html" %}
     <div id="layoutSidenav_content">
       <main>{% block content %} {% endblock %}</main>
-      <footer class="py-4 bg-light mt-auto">
+      <footer class="py-4 bg-light footer">
         <div class="container-fluid px-4">
           <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; reated by NongDamGom. All right Reserved</div>
-            <div>
-              <a href="#">Privacy Policy</a>
-              &middot;
-              <a href="#">Terms &amp; Conditions</a>
-            </div>
           </div>
         </div>
       </footer>
