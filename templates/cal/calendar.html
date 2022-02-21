@@ -11,6 +11,9 @@
   table{
     margin-bottom: 10%;
   }
+  #layoutSidenav_content{
+    margin-bottom: 10%;
+  }
 </style>
 <h1 class="text-dark c-titel">CALENDAR</h1>
 {% endblock %} {% block content_side %}
@@ -20,5 +23,7 @@
   <a class="btn btn-dark right" href="{% url 'cal:event_new' %}"> New Event </a>
 </div>
 
-{{ calendar }} {% endblock %}
+{{ calendar }} 
+
+{% endblock %}
 <!-- 220221수정 -->

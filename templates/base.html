@@ -19,10 +19,11 @@
 
     <title>Scheduler</title>
     <style>
-      .footer{
-        bottom: 0;
-        position: absolute;
+      #footer{
+        position: fixed;
         width: 85.6%;
+        margin-top: 10%;
+        bottom: 0;
 
       }
     </style>
@@ -33,7 +34,7 @@
     {% include "navbar.html" %}
     <div id="layoutSidenav_content">
       <main>{% block content %} {% endblock %}</main>
-      <footer class="py-4 bg-light footer">
+      <footer class="py-4 bg-light" id="footer">
         <div class="container-fluid px-4">
           <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; reated by NongDamGom. All right Reserved</div>

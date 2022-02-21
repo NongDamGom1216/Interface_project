@@ -84,6 +84,13 @@ a {
   color: #17a2b8;
 }
 
-footer {
+.footer {
   display: none;
 }
+      .footer{
+        bottom: 0;
+        position: absolute;
+        width: 85.6%;
+        margin-top: 5%;
+
+      }
