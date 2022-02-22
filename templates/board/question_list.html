@@ -1,24 +1,12 @@
 {% extends 'base.html' %}
-{% block content %}
+<!-- -->
+{% block title %} Free Board {% endblock %} {% block content %}
 <!--오버라이딩 -->
 <div class="container my-3">
-  <div class="text-dark rounded">
-    <h1 style="text-align: center; font-weight: bold;">Team Board</h1>
-  </div>
-</div>
-      
-<div class="container my-3">
-
   <div class="user-container my-3">
-    
-    <div class="clearfix">
-      {% comment %} footer 간격 넓히기 : clearfix, 같은 라인에 쓰기 : float {% endcomment %}
-      <div class="float-right">(총 : {{question_list.paginator.count}}건)</div>
-      <!-- 총 건에서 total_count 로 해도 됨 -->
-    </div>
-    <table class="table table-light text-dark">
+    <table class="table table table-hover">
       <thead>
-        <tr class="table-dark">
+        <tr class="thead-dark">
           <th style="width: 60px">번호</th>
           <th>제목</th>
           <th>글쓴이</th>
@@ -33,7 +21,7 @@
             {{ question.id }}
           </td>
           <td>
-            <a href="{% url 'board:detail' question.id %}" style="text-decoration: none;" class="text-dark" > {{ question.subject }} </a>
+            <a href="{% url 'board:detail' question.id %}" style="text-decoration: none;" class="text-dark"> {{ question.subject }} </a>
             {% if question.answer_set.count > 0 %}
             <span class="badge badge-pill badge-dark"> {{ question.answer_set.count }}</span>
             {% endif %}
@@ -48,13 +36,18 @@
         </tr>
         {% endif %}
       </tbody>
-  
     </table>
-    <div class="float-right">
-      <a href="{% url 'board:question_create' %}" class="text-left btn btn-dark">글 쓰기</a>
-    </div>
+
     {% include 'pagination.html' with page_obj=question_list %}
 
+    <div class="clearfix">
+      {% comment %} footer 간격 넓히기 : clearfix, 같은 라인에 쓰기 : float {% endcomment %}
+      <div class="float-right">(총 : {{question_list.paginator.count}}건)</div>
+      <!-- 총 건에서 total_count 로 해도 됨 -->
+      <div class="float-right">
+        <a href="{% url 'board:question_create' %}" class="text-left btn btn-dark"> 질문 등록하기</a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
