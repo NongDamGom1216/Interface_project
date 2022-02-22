@@ -39,7 +39,6 @@
     </table>
 
     {% include 'pagination.html' with page_obj=question_list %}
-
     <div class="clearfix">
       {% comment %} footer 간격 넓히기 : clearfix, 같은 라인에 쓰기 : float {% endcomment %}
       <div class="float-right">(총 : {{question_list.paginator.count}}건)</div>
